@@ -1,0 +1,61 @@
+@import "../../utils/base/base";
+
+.FilterList {
+  margin: (@pad * 3) (@pad * 2);
+
+  .filter-actual-list {
+    .v-clean-list;
+    padding-left: 0px;
+    margin-bottom: 0px;
+  }
+
+  .filter-header {
+    background-color: @gray-solid-a;
+    border: (@pad / 3) solid @gray-solid-a;
+    border-bottom: none;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+
+  .filter-title {
+    color: @white;
+    font-weight: 500;
+    font-size: 1.2em;
+    padding: (@pad * 2) 0px;
+    margin-bottom: 0px;
+    margin-left: @pad * 2;
+  }
+
+  .filter-badge {
+    background: @white;
+    border-radius: 3px;
+    color: @gray-solid-b;
+    float: right;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-right: (@pad * 2) - 4;
+    margin-top: - @pad;
+    padding: 4px 6px;
+  }
+
+  .filter-footer {
+    background: @white;
+    border: (@pad / 3) solid @gray-solid-a;
+    border-top: none;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    margin-bottom: (@pad * 3);
+  }
+
+  .filter-link {
+    color: @gray-solid-b;
+    display: block;
+    font-family: 'Lato';
+    font-size: 1em;
+    font-weight: 500;
+    height: 100%;
+    padding: @pad * 2;
+    text-decoration: underline;
+    width: 100%;
+  }
+}

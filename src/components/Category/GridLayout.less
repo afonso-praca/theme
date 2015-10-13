@@ -1,0 +1,28 @@
+@import "../../utils/base/base";
+
+.GridLayout {
+  .grid-product-wrapper {
+    padding: @pad;
+
+    &:nth-child(even) {
+      border-top: 2px solid darken(#F7F7F7, 10%);
+      border-left: 2px solid darken(#F7F7F7, 10%);
+    }
+
+    &:nth-child(odd) {
+      border-top: 2px solid darken(#F7F7F7, 10%);
+    }
+
+    &:first-child, &:nth-child(2) {
+      border-top: none;
+    }
+
+    &:nth-child(4) {
+      // We have to find a way to, in the same grid row, grab the bigger sibling's
+      // height and force the smaller to grow into the same size -- without flexbox!!!
+      // This is a temporary hack for presentation purposes
+      // -- @dfosco
+    //  min-height: 205px;
+    }
+  }
+}
