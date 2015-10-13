@@ -1,7 +1,7 @@
 import React from 'react';
-import './SubCategoryList.less';
+import './style.less';
 import { Link } from 'react-router';
-import SubCategoryListButton from 'components/Category/SubCategoryListButton';
+import SubCategoryListButton from './SubCategoryListButton';
 
 class SubCategoryList extends React.Component {
   render() {
@@ -37,3 +37,4 @@ class SubCategoryList extends React.Component {
 }
 
 export default SubCategoryList;
+

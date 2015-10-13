@@ -1,0 +1,19 @@
+{
+  "route": {
+    "name": "category",
+    "path": "/*/c"
+  },
+  "resourceBinding": {
+    "locator": "products@vtex.storefront-sdk",
+    "params": {
+      "category": "{{ route.splat }}",
+      "brand": "{{ query.brand }}"
+    }
+  },
+  "assets": [
+    "CategoryPage.js"
+  ],
+  "exports": {
+    "category": "{{ route.splat }}"
+  }
+}

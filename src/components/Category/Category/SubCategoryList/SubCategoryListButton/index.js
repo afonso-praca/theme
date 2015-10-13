@@ -1,5 +1,5 @@
 import React from 'react';
-import './SubCategoryListButton.less';
+import './style.less';
 
 class SubCategoryListButton extends React.Component {
   render() {
@@ -10,3 +10,4 @@ class SubCategoryListButton extends React.Component {
 }
 
 export default SubCategoryListButton;
+

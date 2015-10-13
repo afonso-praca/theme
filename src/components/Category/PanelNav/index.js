@@ -1,5 +1,5 @@
 import React from 'react';
-import './PanelNav.less';
+import './style.less';
 
 class PanelNav extends React.Component {
   handleTouchTap = (e) => {
@@ -16,3 +16,4 @@ class PanelNav extends React.Component {
 }
 
 export default PanelNav;
+

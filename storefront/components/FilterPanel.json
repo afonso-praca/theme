@@ -1,0 +1,11 @@
+{
+  "resourceBinding": {
+    "locator": "facets@vtex.storefront-sdk",
+    "params": {
+      "category": "{{ exports.category }}"
+    }
+  },
+  "assets": [
+    "CategoryPage.js"
+  ]
+}

@@ -1,11 +1,9 @@
 import React from 'react';
-import './CategoryButton.less';
-import CategoryPanel from 'components/Category/CategoryPanel';
+import './style.less';
+import CategoryPanel from './CategoryPanel';
 import SVGIcon from 'utils/SVGIcon';
 import hamburgerIcon from 'assets/icons/hamburger_icon.svg';
 import hamburgerImg from 'assets/icons/hamburger_icon.png';
-
-let iconColor = '#777777';
 
 class CategoryButton extends React.Component {
   state = {
@@ -24,19 +22,24 @@ class CategoryButton extends React.Component {
   }
 
   render() {
+    let iconColor = '#777777';
     let isCategoryPanelOpen = this.state.categoryPanelOpen;
+
     return (
       <div className="CategoryButton">
-        <a onClick={this.openCategoryPanel}><SVGIcon className="icon" svg={hamburgerIcon} fallback={hamburgerImg} height={24}
-          height={24} padding="4px" fill={iconColor}/></a>
-        <CategoryPanel
-          categories={this.props.categories}
-          facets={this.props.facets}
-          isOpen={isCategoryPanelOpen}
-          closeCategoryPanel={this.closeCategoryPanel}/>
+        <a onClick={this.openCategoryPanel}>
+          <SVGIcon className="icon" svg={hamburgerIcon}
+                   fallback={hamburgerImg} height={24}
+                   padding="4px" fill={iconColor} />
+        </a>
+        <CategoryPanel categories={this.props.categories}
+                       facets={this.props.facets}
+                       isOpen={isCategoryPanelOpen}
+                       closeCategoryPanel={this.closeCategoryPanel} />
      </div>
     );
   }
 }
 
 export default CategoryButton;
+
