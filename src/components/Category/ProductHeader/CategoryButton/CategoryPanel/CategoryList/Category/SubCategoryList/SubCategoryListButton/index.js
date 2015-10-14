@@ -4,7 +4,7 @@ import './style.less';
 class SubCategoryListButton extends React.Component {
   render() {
     return (
-      <button className="SubCategoryListButton"></button>
+      <button className="SubCategoryListButton" />
     )
   }
 }

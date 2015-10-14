@@ -12,12 +12,12 @@ class CategoryButton extends React.Component {
   }
 
   openCategoryPanel = () => {
-    this.setState({categoryPanelOpen: true});
+    this.setState({ categoryPanelOpen: true });
   }
 
   closeCategoryPanel = (ev) => {
     if (ev.currentTarget === ev.target) {
-      this.setState({categoryPanelOpen: false});
+      this.setState({ categoryPanelOpen: false });
     }
   }
 
@@ -32,7 +32,7 @@ class CategoryButton extends React.Component {
                    fallback={hamburgerImg} height={24}
                    padding="4px" fill={iconColor} />
         </a>
-        <CategoryPanel categories={this.props.categories}
+        <CategoryPanel category={this.props.category}
                        facets={this.props.facets}
                        isOpen={isCategoryPanelOpen}
                        closeCategoryPanel={this.closeCategoryPanel} />

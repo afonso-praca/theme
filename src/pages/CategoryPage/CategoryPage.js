@@ -8,11 +8,8 @@ import { extend } from 'lodash-compat/object';
 
 @utils.connectToStores()
 class CategoryPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      grid: false
-    };
+  state = {
+    grid: false
   }
 
   static contextTypes = History.contextTypes
@@ -21,7 +18,8 @@ class CategoryPage extends React.Component {
     return [
       stores.SearchStore,
       stores.ProductStore,
-      stores.FacetsStore
+      stores.FacetsStore,
+      stores.CategoryStore
     ];
   }
 
@@ -29,12 +27,13 @@ class CategoryPage extends React.Component {
     return {
       SearchStore: stores.SearchStore.getState(),
       ProductStore: stores.ProductStore.getState(),
-      FacetsStore: stores.FacetsStore.getState()
+      FacetsStore: stores.FacetsStore.getState(),
+      CategoryStore: stores.CategoryStore.getState()
     };
   }
 
   changeExibitionMode = () => {
-    this.setState({ grid: !this.state.grid});
+    this.setState({ grid: !this.state.grid });
   }
 
   static willTransitionTo = (transition, params, query) => {
@@ -47,20 +46,20 @@ class CategoryPage extends React.Component {
   }
 
   shouldComponentUpdate = () => {
-    let currentURL = (window.location.pathname + window.location.search);
+    let currentURL = window.location.pathname;
 
     return this.props.SearchStore.getIn([currentURL, 'results']) ? true : false;
   }
 
   render() {
-    let currentURL = (window.location.pathname + window.location.search);
+    let currentURL = window.location.pathname;
+    let slugs = currentURL.split('/').slice(1, currentURL.split('/').length - 1);
     let productsIds = this.props.SearchStore.getIn([currentURL, 'results']);
-    let products = stores.ProductStore.getProducts(productsIds);
-    let category = this.props.params.splat;
-    let categoryLevel = category.split('/').length;
-    let categories = products ? products[0].categories : [];
+    // let products = stores.ProductStore.getProducts(productsIds);
+    let products = [];
+    let category = stores.CategoryStore.getCategory(slugs);
 
-    if (categories[categoryLevel - 1].slug != category) {
+    if (!category) {
       return (
         <div>
           <h1>Redirect para busca!</h1>
@@ -71,11 +70,11 @@ class CategoryPage extends React.Component {
     return (
       <div>
         <Header />
-        <ProductHeader categories={category}
+        <ProductHeader category={category}
                        facets={this.props.FacetsStore}
                        grid={this.state.grid}
                        changeExibitionMode={this.changeExibitionMode} />
-        <ExibitionMode grid={this.state.grid} products={products}/>
+        <ExibitionMode grid={this.state.grid} products={products} />
       </div>
     );
   }

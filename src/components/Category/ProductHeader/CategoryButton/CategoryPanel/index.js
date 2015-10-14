@@ -4,19 +4,9 @@ import CategoryList from './CategoryList';
 import PanelNav from 'components/Category/common/PanelNav';
 
 class CategoryPanel extends React.Component {
-  getCategories(facetsStore, currentURL) {
-    let facets = facetsStore.get(currentURL);
-    return facets ? facets.filters.category[0] : {children: []};
-  }
-
   render() {
-    let isOpen = this.props.isOpen;
-    let facets = this.props.facets;
-    let currentURL = (window.location.pathname + window.location.search);
-    let category = this.getCategories(facets, currentURL);
-
     return (
-      <aside className="CategoryPanel" data-is-open={isOpen}>
+      <aside className="CategoryPanel" data-is-open={this.props.isOpen}>
         <div className="frame">
           <PanelNav closePanel={this.props.closeCategoryPanel}
                     navType='button' />
@@ -24,9 +14,8 @@ class CategoryPanel extends React.Component {
             <h1 className="category-header container">
               Departamentos
             </h1>
-            <CategoryList categories={this.props.categories}
-                          closeCategoryPanel={this.props.closeCategoryPanel}
-                          category={category}/>
+            <CategoryList category={this.props.category}
+                          closeCategoryPanel={this.props.closeCategoryPanel} />
           </div>
         </div>
       </aside>

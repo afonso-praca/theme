@@ -23,7 +23,7 @@ class ProductHeader extends React.Component {
           <div className="row">
             <div className="col-xs-12">
               <h1 className="header-title">
-                Informática
+                { this.props.category.name }
               </h1>
             </div>
             <div className="col-xs-12">
@@ -43,15 +43,15 @@ class ProductHeader extends React.Component {
                 </div>
               </div>
               <div className="icon-wrapper">
-                <CategoryButton categories={this.props.categories}
+                <CategoryButton category={this.props.category}
                                 facets={this.props.facets} />
               </div>
               <div className="icon-wrapper">
-                <OrderButton categories={this.props.categories}
+                <OrderButton categories={this.props.category}
                              facets={this.props.facets} />
               </div>
               <div className="icon-wrapper">
-                <FilterButton categories={this.props.categories} />
+                <FilterButton categories={this.props.category} />
               </div>
             </div>
           </div>
