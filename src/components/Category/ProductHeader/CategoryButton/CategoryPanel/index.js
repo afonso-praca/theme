@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.less';
 import CategoryList from './CategoryList';
-import PanelNav from './PanelNav';
+import PanelNav from 'components/Category/common/PanelNav';
 
 class CategoryPanel extends React.Component {
   getCategories(facetsStore, currentURL) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.less';
-import PanelNav from './PanelNav';
+import PanelNav from 'components/Category/common/PanelNav';
 import OrderList from './OrderList';
 
 class OrderPanel extends React.Component {
