@@ -4,7 +4,7 @@ import './style.less';
 
 class CategoryList extends React.Component {
   getSubCategory(category, subCategory) {
-    if(category.children) {
+    if (category.children) {
       return category;
     }
 
@@ -16,7 +16,7 @@ class CategoryList extends React.Component {
   }
 
   getCurrentCategory(category, currentURL, categories) {
-    if(categories.length < 2) {
+    if (categories.length < 2) {
       return category;
     }
 

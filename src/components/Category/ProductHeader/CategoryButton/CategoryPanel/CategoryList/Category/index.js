@@ -14,6 +14,7 @@ class Category extends React.Component {
 
   render() {
     let name = this.props.name;
+    let unfold = this.state.isCategoryClicked ? true : false;
     let content = this.state.isCategoryClicked ?
       (
         <SubCategoryList key={this.props.slug}
@@ -21,8 +22,6 @@ class Category extends React.Component {
                          category={this.props.category}
                          slug={this.props.slug}/>
       ) : null;
-
-      let unfold = this.state.isCategoryClicked ? true : false;
 
     return (
       <li className="Category row" data-is-open="true">
