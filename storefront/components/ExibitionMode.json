@@ -1,0 +1,13 @@
+{
+  "resourceBinding": {
+    "locator": "products@vtex.storefront-sdk",
+    "params": {
+      "category": "{{ settings.category }}"
+    }
+  },
+  "assets": [
+    "common.js",
+    "ExibitionMode.js"
+  ]
+}
+

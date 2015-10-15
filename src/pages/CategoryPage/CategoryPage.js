@@ -1,7 +1,7 @@
 import React from 'react';
 import { stores, actions, utils } from 'sdk';
 import { History } from 'react-router';
-import ExibitionMode from 'components/Category/ExibitionMode';
+import ExibitionMode from 'react-proxy?name=ExibitionMode!components/Category/ExibitionMode';
 import ProductHeader from 'components/Category/ProductHeader';
 import Header from 'components/Header/Header';
 import { extend } from 'lodash-compat/object';
@@ -44,7 +44,6 @@ class CategoryPage extends React.Component {
   render() {
     let path = window.location.pathname;
     let slugs = path.split('/').slice(1, path.split('/').length - 1);
-    let products = [];
     let category = stores.CategoryStore.getCategory(slugs);
 
     if (!category) {
@@ -59,10 +58,9 @@ class CategoryPage extends React.Component {
       <div>
         <Header />
         <ProductHeader category={category}
-                       facets={this.props.FacetsStore}
                        grid={this.state.grid}
                        changeExibitionMode={this.changeExibitionMode} />
-        <ExibitionMode grid={this.state.grid} products={products} />
+        <ExibitionMode grid={this.state.grid} />
       </div>
     );
   }
