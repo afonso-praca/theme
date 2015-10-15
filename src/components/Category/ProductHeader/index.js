@@ -18,7 +18,7 @@ class ProductHeader extends React.Component {
     };
 
     return (
-      <nav className="ProductHeader row-fluid">
+      <nav className="ProductHeader container">
         <div className="header-container">
           <div className="row">
             <div className="col-xs-12">
