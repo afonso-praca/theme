@@ -4,10 +4,10 @@ import './style.less';
 
 class CategoryList extends React.Component {
   render() {
-    let children = this.props.category.children.map((category) => {
+    let children = this.props.category.get('children').map((category) => {
       return (
-        <Category {...category}
-                  key={category.name}
+        <Category key={category.get('name')}
+                  category={category}
                   closeSidePanel={this.props.closeSidePanel} />
       );
     });

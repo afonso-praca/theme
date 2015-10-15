@@ -5,14 +5,14 @@ import SubCategoryListButton from './SubCategoryListButton';
 
 class SubCategoryList extends React.Component {
   render() {
-    let children = this.props.children.length !== 0 ?
-      this.props.children.map((category) => {
+    let children = this.props.categories.count() !== 0 ?
+      this.props.categories.map((category) => {
         return (
-          <li key={category.name} className="sublist-item">
+          <li key={category.get('name')} className="sublist-item">
             <Link className="sublist-link"
                   onClick={this.props.closeSidePanel}
                   to="category">
-              { category.name }
+              { category.get('name') }
               <SubCategoryListButton />
             </Link>
           </li>

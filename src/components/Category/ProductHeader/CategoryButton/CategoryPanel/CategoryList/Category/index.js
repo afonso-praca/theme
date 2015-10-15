@@ -15,16 +15,16 @@ class Category extends React.Component {
     let unfold = this.state.isCategoryClicked ? true : false;
     let content = this.state.isCategoryClicked ?
       (
-        <SubCategoryList key={this.props.slug}
-                         children={this.props.children}
-                         slug={this.props.slug} />
+        <SubCategoryList key={this.props.category.get('slug')}
+                         categories={this.props.category.get('children')}
+                         slug={this.props.category.get('slug')} />
       ) : null;
 
     return (
       <li className="Category row" data-is-open="true">
         <a className="category-content row-fluid" onTouchTap={this.handleTouchTap}>
           <div>
-            { this.props.name }
+            { this.props.category.get('name') }
             <button className="plus-button" data-is-unfolded={unfold} />
           </div>
         </a>
