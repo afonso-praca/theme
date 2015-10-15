@@ -16,8 +16,6 @@ class CategoryPage extends React.Component {
 
   static getStores() {
     return [
-      stores.SearchStore,
-      stores.ProductStore,
       stores.FacetsStore,
       stores.CategoryStore
     ];
@@ -25,8 +23,6 @@ class CategoryPage extends React.Component {
 
   static getPropsFromStores() {
     return {
-      SearchStore: stores.SearchStore.getState(),
-      ProductStore: stores.ProductStore.getState(),
       FacetsStore: stores.FacetsStore.getState(),
       CategoryStore: stores.CategoryStore.getState()
     };
@@ -37,25 +33,17 @@ class CategoryPage extends React.Component {
   }
 
   static willTransitionTo = (transition, params, query) => {
-    let currentURL = transition.path;
+    let path = transition.path;
     let extParams =  extend(params, { 'query.brand': query.brand });
 
-    if (!stores.ResourceStore.getState().get(currentURL)) {
-      actions.ResourceActions.getRouteResources(currentURL, 'category', extParams);
+    if (!stores.ResourceStore.getState().get(path)) {
+      actions.ResourceActions.getRouteResources(path, 'category', extParams);
     }
   }
 
-  shouldComponentUpdate = () => {
-    let currentURL = window.location.pathname;
-
-    return this.props.SearchStore.getIn([currentURL, 'results']) ? true : false;
-  }
-
   render() {
-    let currentURL = window.location.pathname;
-    let slugs = currentURL.split('/').slice(1, currentURL.split('/').length - 1);
-    let productsIds = this.props.SearchStore.getIn([currentURL, 'results']);
-    // let products = stores.ProductStore.getProducts(productsIds);
+    let path = window.location.pathname;
+    let slugs = path.split('/').slice(1, path.split('/').length - 1);
     let products = [];
     let category = stores.CategoryStore.getCategory(slugs);
 
