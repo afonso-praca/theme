@@ -2,6 +2,7 @@ import React from 'react';
 import './style.less';
 import PanelNav from 'components/Category/common/PanelNav';
 import FilterList from './FilterList';
+import OrderList from './OrderList';
 
 class FilterPanel extends React.Component {
   render() {
@@ -12,7 +13,9 @@ class FilterPanel extends React.Component {
         <div className="frame">
           <PanelNav closePanel={this.props.closeFilterPanel} navType='button' />
           <div className="content">
-            <h1 className="header container">Filtrar por</h1>
+            <h3 className="header container">Ordenação</h3>
+              <OrderList />
+            <h1 className="header container">Filtros</h1>
             <FilterList />
           </div>
         </div>
@@ -22,4 +25,3 @@ class FilterPanel extends React.Component {
 }
 
 export default FilterPanel;
-

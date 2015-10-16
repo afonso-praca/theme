@@ -4,11 +4,34 @@
   width: 100%;
   background: #F7F7F7;
 
+  .icon-wrapper {
+    width: 25%;
+    display: inline-block;
+
+    &:last-child {
+      margin-left: @pad * 2;
+    }
+  }
+
   .icon {
     float: left;
     padding-top: @pad;
     padding-right: @pad;
   }
+
+  .icon-label {
+    color: #777777;
+    display: block;
+    font-size: 0.9em;
+    float: left;
+    font-weight: 500;
+    max-width: 24px;
+    padding-top: @pad * 1.5;
+    padding-bottom: @pad;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
 
   .header-container {
     padding: (@pad * 3) 0px;

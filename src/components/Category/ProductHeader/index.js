@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.less';
-import CategoryButton from './CategoryButton';
-import OrderButton from './OrderButton';
+//import CategoryButton from './CategoryButton';
+//import OrderButton from './OrderButton';
 import FilterButton from './FilterButton';
 import SVGIcon from 'utils/SVGIcon';
 import listIcon from 'assets/icons/list_icon.svg';
@@ -16,6 +16,8 @@ class ProductHeader extends React.Component {
       svg: this.props.grid ? listIcon : gridIcon,
       img: this.props.grid ? listImg : gridImg
     };
+
+    let iconLabel = this.props.grid ? 'Lista' : 'Grid';
 
     return (
       <nav className="ProductHeader container">
@@ -34,20 +36,19 @@ class ProductHeader extends React.Component {
           </div>
           <div className="row">
             <div className="header-buttons col-xs-12">
-              <div onClick={this.props.changeExibitionMode} className="icon-wrapper">
-                <div>
-                  <SVGIcon className="icon" svg={icon.svg}
-                           fallback={icon.img} width={24}
-                           cleanupExceptions={['width', 'height']}
-                           fill={iconColor} />
+              <div className="icon-wrapper">
+                <div onClick={this.props.changeExibitionMode}>
+                  <div>
+                    <SVGIcon className="icon" svg={icon.svg}
+                             fallback={icon.img} width={24}
+                             cleanupExceptions={['width', 'height']}
+                             fill={iconColor} />
+                  </div>
                 </div>
+                <label onClick={this.props.changeExibitionMode} className="icon-label">{iconLabel}</label>
               </div>
-              <div className="icon-wrapper">
-                <CategoryButton category={this.props.category} />
-              </div>
-              <div className="icon-wrapper">
-                <OrderButton />
-              </div>
+              {/* <CategoryButton category={this.props.category} /> */}
+              {/* <OrderButton /> */}
               <div className="icon-wrapper">
                 <FilterButton />
               </div>
@@ -60,4 +61,3 @@ class ProductHeader extends React.Component {
 }
 
 export default ProductHeader;
-

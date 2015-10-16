@@ -29,9 +29,10 @@ class FilterButton extends React.Component {
       <div className="FilterButton">
         <a onTouchTap={this.openFilterPanel}>
           <SVGIcon className="icon" svg={filterIcon}
-                   fallback={filterImg} height={24}
-                   padding="4px" fill={iconColor} />
+                   fallback={filterImg} width={24}
+                   fill={iconColor} />
         </a>
+        <label onTouchTap={this.openFilterPanel} className="icon-label">Filtros</label>
         <FilterPanel categories={this.props.categories}
                      facets={this.props.facets}
                      isOpen={isFilterPanelOpen}
@@ -42,4 +43,3 @@ class FilterButton extends React.Component {
 }
 
 export default FilterButton;
-
