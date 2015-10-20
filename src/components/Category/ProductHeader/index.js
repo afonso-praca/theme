@@ -24,15 +24,15 @@ class ProductHeader extends React.Component {
         <div className="header-container">
           <div className="row header-content">
             <div className="categoryTitle">
-              <h1 className="header-title col-xs-10">
+              <h1 className="header-title">
                 { this.props.category.get('name') }
               </h1>
-              <button className="categoryArrow col-xs-2">
+              <button className="categoryArrow">
                 <SVGIcon className="icon"
                            svg={downArrowIcon}
-                           fallback={downArrowImg} width={15}
+                           fallback={downArrowImg} width={18}
                            cleanupExceptions={['width', 'height']}
-                           fill={iconColor} />
+                           fill='#777777' />
               </button>
             </div>
             <div className="col-xs-12">
