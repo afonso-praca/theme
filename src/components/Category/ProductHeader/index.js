@@ -4,9 +4,7 @@ import './style.less';
 //import OrderButton from './OrderButton';
 import FilterButton from './FilterButton';
 import ExibitionButton from './ExibitionButton';
-import SVGIcon from 'utils/SVGIcon';
-import downArrowIcon from 'assets/icons/down-arrow_icon.svg';
-import downArrowImg from 'assets/icons/down-arrow_icon.png';
+import CategoryExplorer from './CategoryExplorer';
 
 class ProductHeader extends React.Component {
   render() {
@@ -18,13 +16,7 @@ class ProductHeader extends React.Component {
               <h1 className="header-title">
                 { this.props.category.get('name') }
               </h1>
-              <button className="categoryArrow">
-                <SVGIcon className="icon"
-                           svg={downArrowIcon}
-                           fallback={downArrowImg} width={18}
-                           cleanupExceptions={['width', 'height']}
-                           fill='#777777' />
-              </button>
+              <CategoryExplorer />
             </div>
             <div className="col-xs-12">
               <span className="header-results">
