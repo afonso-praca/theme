@@ -29,7 +29,7 @@ class FilterButton extends React.Component {
       <div className="FilterButton">
         <a onTouchTap={this.openFilterPanel}>
           <SVGIcon className="icon" svg={filterIcon}
-                   fallback={filterImg} width={24}
+                   fallback={filterImg} width={18}
                    fill={iconColor} />
         </a>
         <label onTouchTap={this.openFilterPanel} className="icon-label">Filtros</label>

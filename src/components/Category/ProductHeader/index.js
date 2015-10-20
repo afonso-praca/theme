@@ -40,7 +40,7 @@ class ProductHeader extends React.Component {
                 <div onClick={this.props.changeExibitionMode}>
                   <div>
                     <SVGIcon className="icon" svg={icon.svg}
-                             fallback={icon.img} width={24}
+                             fallback={icon.img} width={18}
                              cleanupExceptions={['width', 'height']}
                              fill={iconColor} />
                   </div>
