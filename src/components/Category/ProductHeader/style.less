@@ -1,22 +1,12 @@
 @import "../../../utils/base/base";
 
 .ProductHeader {
-  width: 100%;
   background: #F7F7F7;
-
-  .icon-wrapper {
-    width: 25%;
-    display: inline-block;
-
-    &:last-child {
-      margin-left: @pad * 2;
-    }
-  }
 
   .icon {
     float: left;
+    display: inline-block;
     padding-top: @pad;
-    padding-right: @pad;
   }
 
   .icon-label {
@@ -25,13 +15,18 @@
     font-size: 0.9em;
     float: left;
     font-weight: 500;
-    max-width: 24px;
-    padding-top: @pad * 1.5;
-    padding-bottom: @pad;
+    padding-top: 6.5px;
     text-align: center;
     text-transform: uppercase;
   }
 
+  .gridButton {
+    .v-clean-btn;
+    .v-no-outlines;
+    float: right;
+    padding-left: @pad / 2;
+    padding-right: @pad / 2;
+  }
 
   .header-container {
     padding: (@pad * 3) 0px;

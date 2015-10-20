@@ -1,10 +1,27 @@
 @import "../../../../utils/base/base";
 
 .FilterButton {
+  .v-clean-btn;
+  .v-no-outlines;
+  background: darken(#F7F7F7, 10%);
+  //border: 2px solid darken(#F7F7F7, 15%);
+  border-radius: 2px;
+  float: left;
+  padding-left: @pad / 1.5;
+  padding-right: @pad / 1.5;
 
   .icon {
-    float: left;
     padding-top: @pad;
-    padding-right: @pad;
   }
+
+  .icon-label {
+    color: #777;
+    font-size: 0.9em;
+    font-weight: 500;
+    padding-top: 6px;
+    padding-left: @pad;
+    text-align: center;
+    text-transform: none;
+  }
+
 }

@@ -11,13 +11,11 @@ import gridImg from 'assets/icons/grid_icon.png';
 
 class ProductHeader extends React.Component {
   render() {
-    let iconColor = '#777777';
+    let iconColor = '#014673';
     let icon = {
       svg: this.props.grid ? listIcon : gridIcon,
       img: this.props.grid ? listImg : gridImg
     };
-
-    let iconLabel = this.props.grid ? 'Lista' : 'Grid';
 
     return (
       <nav className="ProductHeader container">
@@ -36,22 +34,16 @@ class ProductHeader extends React.Component {
           </div>
           <div className="row">
             <div className="header-buttons col-xs-12">
-              <div className="icon-wrapper">
-                <div onClick={this.props.changeExibitionMode}>
-                  <div>
-                    <SVGIcon className="icon" svg={icon.svg}
-                             fallback={icon.img} width={18}
-                             cleanupExceptions={['width', 'height']}
-                             fill={iconColor} />
-                  </div>
-                </div>
-                <label onClick={this.props.changeExibitionMode} className="icon-label">{iconLabel}</label>
-              </div>
+              <FilterButton />
+              <button className="gridButton" onClick={this.props.changeExibitionMode}>
+                <SVGIcon className="icon"
+                           svg={icon.svg}
+                           fallback={icon.img} width={18}
+                           cleanupExceptions={['width', 'height']}
+                           fill={iconColor} />
+              </button>
               {/* <CategoryButton category={this.props.category} /> */}
               {/* <OrderButton /> */}
-              <div className="icon-wrapper">
-                <FilterButton />
-              </div>
             </div>
           </div>
         </div>

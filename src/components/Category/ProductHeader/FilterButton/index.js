@@ -26,13 +26,13 @@ class FilterButton extends React.Component {
     let isFilterPanelOpen = this.state.filterPanelOpen;
 
     return (
-      <div className="FilterButton">
-        <a onTouchTap={this.openFilterPanel}>
+      <div>
+        <button className="FilterButton" onTouchTap={this.openFilterPanel}>
           <SVGIcon className="icon" svg={filterIcon}
                    fallback={filterImg} width={18}
                    fill={iconColor} />
-        </a>
-        <label onTouchTap={this.openFilterPanel} className="icon-label">Filtros</label>
+          <span className="icon-label">Filtros</span>
+        </button>
         <FilterPanel categories={this.props.categories}
                      facets={this.props.facets}
                      isOpen={isFilterPanelOpen}
