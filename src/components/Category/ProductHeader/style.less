@@ -24,26 +24,37 @@
     .v-clean-btn;
     .v-no-outlines;
     float: right;
-    padding-left: @pad / 2;
-    padding-right: @pad / 2;
   }
 
   .header-container {
     padding: (@pad * 3) 0px;
   }
 
+  .categoryTitle {
+    padding: 0px (@pad * 2);
+  }
+
+  .categoryArrow {
+    .v-clean-btn;
+    .v-no-outlines;
+    float: right;
+    padding-top: @pad;
+  }
+
   .header-title {
+    float: left;
     font-family: 'Lato';
     font-weight: 200;
     margin-top: 0px;
     margin-bottom: @pad / 2;
-    padding: 0px (@pad * 2);
+    max-width: 80%;
+    padding: 0px;
     text-align: left;
   }
 
   .header-buttons {
     margin-top: 0.75em;
-    padding: 0px (@pad * 4);
+    padding: 0px (@pad * 2);
   }
 
   .header-results {
@@ -51,11 +62,11 @@
     display: block;
     font-family: 'Lato';
     font-weight: 400;
-    padding: 0px (@pad * 2);
+    //padding: 0px (@pad * 2);
   }
 
   .header-content {
-    margin-top: 1em;
+    margin-bottom: 1em;
   }
 
   .category-title {

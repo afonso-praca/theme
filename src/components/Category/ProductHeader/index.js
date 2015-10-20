@@ -8,6 +8,8 @@ import listIcon from 'assets/icons/list_icon.svg';
 import listImg from 'assets/icons/list_icon.png';
 import gridIcon from 'assets/icons/grid_icon.svg';
 import gridImg from 'assets/icons/grid_icon.png';
+import downArrowIcon from 'assets/icons/down-arrow_icon.svg';
+import downArrowImg from 'assets/icons/down-arrow_icon.png';
 
 class ProductHeader extends React.Component {
   render() {
@@ -20,11 +22,18 @@ class ProductHeader extends React.Component {
     return (
       <nav className="ProductHeader container">
         <div className="header-container">
-          <div className="row">
-            <div className="col-xs-12">
-              <h1 className="header-title">
+          <div className="row header-content">
+            <div className="categoryTitle">
+              <h1 className="header-title col-xs-10">
                 { this.props.category.get('name') }
               </h1>
+              <button className="categoryArrow col-xs-2">
+                <SVGIcon className="icon"
+                           svg={downArrowIcon}
+                           fallback={downArrowImg} width={15}
+                           cleanupExceptions={['width', 'height']}
+                           fill={iconColor} />
+              </button>
             </div>
             <div className="col-xs-12">
               <span className="header-results">
@@ -33,9 +42,9 @@ class ProductHeader extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="header-buttons col-xs-12">
-              <FilterButton />
-              <button className="gridButton" onClick={this.props.changeExibitionMode}>
+            <div className="header-buttons">
+              <FilterButton className="col-xs-10" />
+              <button className="col-xs-2 gridButton" onClick={this.props.changeExibitionMode}>
                 <SVGIcon className="icon"
                            svg={icon.svg}
                            fallback={icon.img} width={18}
