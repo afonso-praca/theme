@@ -3,22 +3,13 @@ import './style.less';
 //import CategoryButton from './CategoryButton';
 //import OrderButton from './OrderButton';
 import FilterButton from './FilterButton';
+import ExibitionButton from './ExibitionButton';
 import SVGIcon from 'utils/SVGIcon';
-import listIcon from 'assets/icons/list_icon.svg';
-import listImg from 'assets/icons/list_icon.png';
-import gridIcon from 'assets/icons/grid_icon.svg';
-import gridImg from 'assets/icons/grid_icon.png';
 import downArrowIcon from 'assets/icons/down-arrow_icon.svg';
 import downArrowImg from 'assets/icons/down-arrow_icon.png';
 
 class ProductHeader extends React.Component {
   render() {
-    let iconColor = '#014673';
-    let icon = {
-      svg: this.props.grid ? listIcon : gridIcon,
-      img: this.props.grid ? listImg : gridImg
-    };
-
     return (
       <nav className="ProductHeader container">
         <div className="header-container">
@@ -44,13 +35,7 @@ class ProductHeader extends React.Component {
           <div className="row">
             <div className="header-buttons">
               <FilterButton className="col-xs-10" />
-              <button className="col-xs-2 gridButton" onClick={this.props.changeExibitionMode}>
-                <SVGIcon className="icon"
-                           svg={icon.svg}
-                           fallback={icon.img} width={18}
-                           cleanupExceptions={['width', 'height']}
-                           fill={iconColor} />
-              </button>
+              <ExibitionButton className="col-xs-2" onClick={this.props.changeExibitionMode} />
               {/* <CategoryButton category={this.props.category} /> */}
               {/* <OrderButton /> */}
             </div>
