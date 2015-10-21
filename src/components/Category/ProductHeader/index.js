@@ -4,7 +4,7 @@ import './style.less';
 //import OrderButton from './OrderButton';
 import FilterButton from './FilterButton';
 import ExibitionButton from './ExibitionButton';
-import CategoryExplorer from './CategoryExplorer';
+import ExplorerButton from './ExplorerButton';
 
 class ProductHeader extends React.Component {
   render() {
@@ -16,7 +16,7 @@ class ProductHeader extends React.Component {
               <h1 className="header-title">
                 { this.props.category.get('name') }
               </h1>
-              <CategoryExplorer />
+              <ExplorerButton />
             </div>
             <div className="col-xs-12">
               <span className="header-results">

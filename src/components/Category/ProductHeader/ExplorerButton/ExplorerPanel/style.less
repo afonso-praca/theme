@@ -1,0 +1,60 @@
+@import "../../../../../utils/base/base";
+
+.ExplorerPanel {
+    background-color: @gray-soft;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    /* Force Hardware Acceleration in WebKit */
+    transform: translateZ(0);
+    transform: translateX(-100%);
+    // This transition will happen when the sidebar is closed
+    // The transform transition will be delayed by 0.2s
+    // The opacity is always transitioning at the same pace
+    transition: transform 0s ease-out 0.2s, opacity 0.2s;
+    width: 100%;
+    z-index: 9999;
+
+    .frame {
+      /* Force Hardware Acceleration in WebKit */
+      transform: translateZ(0);
+      transform: translateX(-100%);
+      transition: transform 0.4s 0s, box-shadow 0s 0.4s;
+      overflow-x: auto;
+      height: 100%;
+      width: 100%;
+    }
+}
+
+.ExplorerPanel[data-is-open=true] {
+  opacity: 1;
+  transform: translateX(0);
+  // This transition will happen when the sidebar is opened
+  // The transform will transition instantly in 0s
+  // The opacity transition will be the same
+  transition: transform 0s ease-out 0s, opacity 0.2s;
+
+  .frame {
+    /* Force Hardware Acceleration in WebKit */
+    transform: translateZ(0);
+    transform: translateX(0);
+    transition: transform 0.4s 0s, box-shadow 0s 0s;
+  }
+}
+
+.content {
+  margin-top: 2em;
+}
+
+.header {
+  color: #333333;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;;
+  font-size: 1.4em;
+  font-weight: 200;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  text-align: left;
+
+}
