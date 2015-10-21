@@ -27,7 +27,7 @@ class ProductHeader extends React.Component {
           <div className="row">
             <div className="header-buttons">
               <FilterButton className="col-xs-10" />
-              <ExibitionButton className="col-xs-2" onClick={this.props.changeExibitionMode} />
+              <ExibitionButton className="col-xs-2" changeExibitionMode={this.props.changeExibitionMode} />
               {/* <CategoryButton category={this.props.category} /> */}
               {/* <OrderButton /> */}
             </div>

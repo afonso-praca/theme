@@ -7,6 +7,10 @@ import gridIcon from 'assets/icons/grid_icon.svg';
 import gridImg from 'assets/icons/grid_icon.png';
 
 class ExibitionButton extends React.Component {
+  handleTouchTap = () => {
+    this.props.changeExibitionMode();
+  }
+
   render() {
     let iconColor = '#014673';
     let icon = {
@@ -15,7 +19,7 @@ class ExibitionButton extends React.Component {
     };
 
     return (
-      <button className="ExibitionButton">
+      <button className="ExibitionButton" onTouchTap={this.handleTouchTap}>
         <SVGIcon className="icon"
                    svg={icon.svg}
                    fallback={icon.img} width={18}
