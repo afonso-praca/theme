@@ -17,14 +17,13 @@ class CategoryPage extends React.Component {
   static getStores() {
     return [
       stores.FacetsStore,
-      stores.CategoryStore
+      stores.ResourceStore
     ];
   }
 
   static getPropsFromStores() {
     return {
-      FacetsStore: stores.FacetsStore.getState(),
-      CategoryStore: stores.CategoryStore.getState()
+      facets: stores.FacetsStore.getState()
     };
   }
 
@@ -43,8 +42,7 @@ class CategoryPage extends React.Component {
 
   render() {
     let path = window.location.pathname;
-    let slugs = path.split('/').slice(1, path.split('/').length - 1);
-    let category = stores.CategoryStore.getCategory(slugs);
+    let category = this.props.facets.getIn([path, 'filters', 'category']).first();
 
     if (!category) {
       return (
@@ -67,4 +65,3 @@ class CategoryPage extends React.Component {
 }
 
 export default CategoryPage;
-

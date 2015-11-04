@@ -4,7 +4,7 @@
     "path": "/*/c"
   },
   "resourceBinding": {
-    "locator": "categories@vtex.storefront-sdk",
+    "locator": "facets@vtex.storefront-sdk",
     "params": {
       "category": "{{ route.splat }}",
       "brand": "{{ query.brand }}"
