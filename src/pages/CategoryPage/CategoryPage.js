@@ -3,6 +3,7 @@ import { stores, actions, utils } from 'sdk';
 import { History } from 'react-router';
 import ExibitionMode from 'react-proxy?name=ExibitionMode!components/Category/ExibitionMode';
 import ProductHeader from 'components/Category/ProductHeader';
+import Pagination from 'components/Pagination';
 import Header from 'components/Header/Header';
 import { extend } from 'lodash-compat/object';
 
@@ -59,6 +60,7 @@ class CategoryPage extends React.Component {
                        grid={this.state.grid}
                        changeExibitionMode={this.changeExibitionMode} />
         <ExibitionMode grid={this.state.grid} />
+        <Pagination />
       </div>
     );
   }
