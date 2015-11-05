@@ -1,12 +1,12 @@
 import React from 'react';
 import './style.less';
 import LoadMore from './LoadMore';
-//import NumberedPagination from './NumberedPagination';
+import NumberedPagination from './NumberedPagination';
 
 class Pagination extends React.Component {
   render() {
 
-    let renderedPagination = <LoadMore/>;
+    let renderedPagination = <NumberedPagination/>;
 
     return (
       <div>
