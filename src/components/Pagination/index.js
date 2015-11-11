@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.less';
-import LoadMore from './LoadMore';
+//  import LoadMore from './LoadMore';
 import NumberedPagination from './NumberedPagination';
 
 class Pagination extends React.Component {

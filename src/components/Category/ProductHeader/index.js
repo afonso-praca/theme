@@ -7,18 +7,20 @@ import ExibitionButton from './ExibitionButton';
 
 class ProductHeader extends React.Component {
   render() {
+
+    let resultNumber = 25;
     return (
       <nav className="ProductHeader container">
         <div className="header-container">
           <div className="row header-content">
             <div className="categoryTitle">
-              <h1 className="header-title">
+              <h2 className="header-title">
                 { this.props.category.get('name') }
-              </h1>
+              </h2>
             </div>
             <div className="col-xs-12">
               <span className="header-results">
-                25 Resultados
+                Sua busca trouxe {resultNumber} resultados
               </span>
             </div>
           </div>
