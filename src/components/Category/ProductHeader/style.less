@@ -3,76 +3,36 @@
 .ProductHeader {
   background: #F7F7F7;
 
-  .icon {
-    float: left;
-    display: inline-block;
-    padding-top: @pad;
-  }
-
-  .icon-label {
-    color: #777777;
-    display: block;
-    font-size: 0.9em;
-    float: left;
-    font-weight: 500;
-    padding-top: 6.5px;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  .gridButton {
-    .v-clean-btn;
-    .v-no-outlines;
-    float: right;
-  }
-
-  .header-container {
+  &-header-container {
     padding: (@pad * 3) 0px;
   }
 
-  .categoryTitle {
-    padding: 0px (@pad * 2);
+  &-header-content {
+    margin-bottom: 1em;
   }
 
-  .header-title {
-    float: left;
-    font-size: 1.4em;
-    font-weight: 200;
-    margin-top: 0px;
-    margin-bottom: @pad / 2;
-    max-width: 100%;
-    padding: 0px;
-    text-align: left;
-  }
-
-  .header-buttons {
-    margin-top: 0.75em;
-    padding: 0px (@pad * 2);
-  }
-
-  .header-results {
+  &-results {
     color: #777777;
     display: block;
     font-family: 'Lato';
     font-weight: 400;
   }
 
-  .header-content {
-    margin-bottom: 1em;
-  }
-
-  .category-title {
-    font-size: 28px;
-    padding: 15px;
+  &-search-title {
+    display: block;
+    float: left;
+    font-size: 1.8em;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 0px;
+    margin-bottom: @pad * 2;
+    max-width: 100%;
+    padding: 0px (@pad * 2);
     text-align: left;
   }
 
-  .category-quantity {
-    display: block;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 0px 15px;
-    margin-top: 40px;
+  &-buttons {
+    margin-top: 0.75em;
+    padding: 0px (@pad * 2);
   }
-
 }
