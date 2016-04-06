@@ -36,7 +36,13 @@ class DefaultTemplate extends React.Component {
 
     return (
       <div className="DefaultTemplate">
+      <ReactCSSTransitionGroup
+        transitionName="Loading"
+        transitionEnterTimeout={200}
+        transitionLeaveTimeout={250}
+      >
         { loading }
+      </ReactCSSTransitionGroup>
         <Header />
           <Placeholder
             id="body"

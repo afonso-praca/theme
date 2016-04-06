@@ -14,3 +14,14 @@
     z-index: @zindex-7;
   }
 }
+
+.Loading {
+  &-enter {
+    opacity: 0;
+
+    &.Loading-enter-active {
+      opacity: 1;
+      transition: opacity 200ms ease-in,
+    }
+  }
+}
