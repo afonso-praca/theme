@@ -9,7 +9,6 @@ import { stores } from 'sdk';
 const Placeholder = stores.ComponentStore.state.getIn(['Placeholder@vtex.storefront-sdk', 'constructor']);
 
 class DefaultTemplate extends React.Component {
-
   componentWillMount() {
     this.setState({ loading: false });
 
@@ -24,10 +23,9 @@ class DefaultTemplate extends React.Component {
     this.setState({ loading: ContextStore.get('loading') });
   }
 
-
   render() {
     const loading = this.state.loading ?
-      <div className="DefaultTemplate__spin-wrap">
+      <div className="DefaultTemplate__spin-wrap" key="spinner">
         <div className="spinner">
           <div className="dot1"></div>
           <div className="dot2"></div>
@@ -36,19 +34,19 @@ class DefaultTemplate extends React.Component {
 
     return (
       <div className="DefaultTemplate">
-      <ReactCSSTransitionGroup
-        transitionName="Loading"
-        transitionEnterTimeout={200}
-        transitionLeaveTimeout={250}
-      >
-        { loading }
-      </ReactCSSTransitionGroup>
+        <ReactCSSTransitionGroup
+          transitionName="Loading"
+          transitionEnterTimeout={200}
+          transitionLeaveTimeout={100}
+        >
+          { loading }
+        </ReactCSSTransitionGroup>
         <Header />
-          <Placeholder
-            id="body"
-            params={this.props.params}
-            location={this.props.location}
-          />
+        <Placeholder
+          id="body"
+          params={this.props.params}
+          location={this.props.location}
+        />
         <Newsletter/>
         <Footer/>
       </div>

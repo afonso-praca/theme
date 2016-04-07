@@ -21,7 +21,16 @@
 
     &.Loading-enter-active {
       opacity: 1;
-      transition: opacity 200ms ease-in,
+      transition: opacity 200ms ease-in;
+    }
+  }
+
+  &-leave {
+    opacity: 1;
+
+    &.Loading-leave-active {
+      opacity: 0;
+      transition: opacity 100ms ease-out;
     }
   }
 }
