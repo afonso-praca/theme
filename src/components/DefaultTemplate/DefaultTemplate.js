@@ -11,7 +11,6 @@ const Placeholder = stores.ComponentStore.state.getIn(['Placeholder@vtex.storefr
 class DefaultTemplate extends React.Component {
   componentWillMount() {
     this.setState({ loading: false });
-
     stores.ContextStore.listen(this.onChange);
   }
 
