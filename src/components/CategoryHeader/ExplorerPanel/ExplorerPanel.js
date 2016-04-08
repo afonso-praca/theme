@@ -6,7 +6,7 @@ import pullArrowIcon from 'assets/icons/pullArrow_icon.svg';
 import pullArrowImg from 'assets/icons/pullArrow_icon.png';
 
 class ExplorerPanel extends React.Component {
-  handleTouchTap = () => {
+  handleClick = () => {
     this.props.closeExplorerPanel();
   }
 
@@ -35,7 +35,7 @@ class ExplorerPanel extends React.Component {
           />
           <button
             className="ExplorerPanel__pull-button col-xs-2 col-xs-push-5"
-            onTouchTap={this.handleTouchTap}
+            onClick={this.handleClick}
           >
             <SVGIcon
               className="CategoryOption-icon"

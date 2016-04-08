@@ -16,11 +16,11 @@ class Header extends React.Component {
     isSearchOpen: false
   }
 
-  handleMenuTap = () => {
+  handleMenuClick = () => {
     this.setState({ isMenuOpen: !this.state.isMenuOpen });
   }
 
-  handleSearchTap = () => {
+  handleSearchClick = () => {
     this.setState({ isSearchOpen: !this.state.isSearchOpen });
   }
 
@@ -30,7 +30,7 @@ class Header extends React.Component {
         <Placeholder
           id="navigation-menu"
           key="NavigationMenu"
-          toggleMenu={this.handleMenuTap}
+          toggleMenu={this.handleMenuClick}
         />
       ) : null;
 
@@ -38,15 +38,15 @@ class Header extends React.Component {
       <div className="Header">
         <HeaderTop />
         <div className="Header__inner clearfix">
-          <HeaderMenuToggle handleMenuTap={this.handleMenuTap} />
+          <HeaderMenuToggle handleMenuClick={this.handleMenuClick} />
           <HeaderLogo />
           <HeaderCart />
-          <HeaderSearchButton handleSearchTap={this.handleSearchTap} />
+          <HeaderSearchButton handleSearchClick={this.handleSearchClick} />
           <div className="Header__search-bar col-sm-3 col-md-3 pull-right">
             <Placeholder
               id="search-bar"
               visible={this.state.isSearchOpen}
-              handleSearchTap={this.handleSearchTap}
+              handleSearchClick={this.handleSearchClick}
             />
           </div>
           <ReactCSSTransitionGroup

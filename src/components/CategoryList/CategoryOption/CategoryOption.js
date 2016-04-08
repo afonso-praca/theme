@@ -6,14 +6,14 @@ import frontArrowIcon from 'assets/icons/frontArrow_icon.svg';
 import frontArrowImg from 'assets/icons/frontArrow_icon.png';
 
 class CategoryOption extends React.Component {
-  handleTouchTap = () => {
+  handleClick = () => {
     this.props.closeExplorerPanel();
     history.pushState(null, this.props.slug, { pageSize: 10 });
   }
 
   render() {
     return (
-      <li className="CategoryOption" onTouchTap={this.handleTouchTap}>
+      <li className="CategoryOption" onClick={this.handleClick}>
         <button className="CategoryOption__button">
           <span className="CategoryOption__label">
             { this.props.name }

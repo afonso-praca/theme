@@ -41,7 +41,7 @@ class CategoryHeader extends React.Component {
     return category !== undefined;
   }
 
-  handleGridTap = () => {
+  handleGridClick = () => {
     this.props.changeLayout();
   }
 
@@ -113,7 +113,7 @@ class CategoryHeader extends React.Component {
                 openFilterPanel={this.toggleFilterPanel(true)}
               />
             </div>
-            <div className="CategoryHeader__grid-button" onTouchTap={this.handleGridTap}>
+            <div className="CategoryHeader__grid-button" onClick={this.handleGridClick}>
               <SVGIcon
                 className="CategoryHeader__icon"
                 svg={icon.svg}

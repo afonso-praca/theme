@@ -32,7 +32,7 @@ class SearchHeader extends React.Component {
     };
   }
 
-  handleGridTap = () => {
+  handleGridClick = () => {
     this.props.changeLayout();
   }
 
@@ -75,7 +75,7 @@ class SearchHeader extends React.Component {
                 openFilterPanel={this.toggleFilterPanel(true)}
               />
             </div>
-            <div className="SearchHeader__grid-button" onTouchTap={this.handleGridTap}>
+            <div className="SearchHeader__grid-button" onClick={this.handleGridClick}>
               <SVGIcon
                 className="SearchHeader__icon"
                 svg={icon.svg}

@@ -5,13 +5,13 @@ import downArrowIcon from 'assets/icons/down-arrow_icon.svg';
 import downArrowImg from 'assets/icons/down-arrow_icon.png';
 
 class ExplorerButton extends React.Component {
-  handleTouchTap = () => {
+  handleClick = () => {
     this.props.openExplorerPanel();
   }
 
   render() {
     return (
-      <button className="ExplorerButton" onTouchTap={this.handleTouchTap}>
+      <button className="ExplorerButton" onClick={this.handleClick}>
         <SVGIcon
           className="ExplorerButton__icon"
           svg={downArrowIcon}
