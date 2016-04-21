@@ -52,7 +52,7 @@ class SearchHeader extends React.Component {
     const layoutName = this.props.grid ? 'Grid' : 'Lista';
     const qty = this.props.qty;
     const resultMsg = qty === 1 ?
-      `${qty} resultado para` : `${qty} resultados`;
+      `${qty} resultado para` : `${qty} resultados para`;
     const icon = {
       svg: this.props.grid ? gridIcon : listIcon,
       img: this.props.grid ? gridImg : listImg
@@ -62,12 +62,12 @@ class SearchHeader extends React.Component {
       <nav className="SearchHeader">
         <div className="SearchHeader__container container-fluid clearfix">
           <div className="SearchHeader__content clearfix">
-            <h1 className="SearchHeader__title">
-              { this.props.searchTerm }
-            </h1>
             <span className="SearchHeader__results">
               { resultMsg }
             </span>
+            <h1 className="SearchHeader__title">
+              { this.props.searchTerm }
+            </h1>
           </div>
           <div className="SearchHeader__buttons">
             <div className="SearchHeader__filter-button hidden-md hidden-lg">
