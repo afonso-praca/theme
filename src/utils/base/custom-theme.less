@@ -66,8 +66,9 @@
 .Product {
 
   &__title {
-    margin: 10px 0;
-    font-size: 16px;
+    margin: 20px 0 15px 0;
+    font-size: 26px;
+    font-family: 'bebas_neuebold', 'sans-serif';
     font-weight: bold;
     font-style: normal;
     text-align: left;
@@ -79,6 +80,7 @@
     font-weight: bold;
     font-size: 16px;
     color: @primary-color;
+    width: 100%;
   }
 
   .percentual-discount, .list-price {
@@ -87,11 +89,12 @@
 
   .list-price {
     text-decoration: line-through;
-    font-size: 12px;
+    font-size: 14px;
+    width: 100%;
   }
 
   .percentual-discount {
-    font-size: 14px;
+    font-size: 12px;
     opacity: 0.8;
   }
 
@@ -100,10 +103,11 @@
     color: @secondary-color;
     font-size: 12px;
     font-weight: normal;
-    .brand-link {
-      text-decoration: underline;
-      color: @blue-lab;
-    }
+  }
+
+  .brand-link {
+    text-decoration: underline;
+    color: @blue-lab;
   }
 
   .ShippingCalculator {

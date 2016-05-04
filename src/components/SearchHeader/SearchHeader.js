@@ -1,5 +1,5 @@
 import React from 'react';
-import { stores, connectToStores } from 'sdk';
+import { stores } from 'sdk';
 import './SearchHeader.less';
 import './SearchHeaderCustom.less';
 import listIcon from 'assets/icons/list_icon.svg';
@@ -12,29 +12,9 @@ import OrderSelector from '../OrderSelector/OrderSelector';
 const Placeholder = stores.ComponentStore.state.getIn(['Placeholder@vtex.storefront-sdk', 'constructor']);
 const SVGIcon = stores.ComponentStore.getState().getIn(['SVGIcon@pilateslovers.pilateslovers-theme', 'constructor']);
 
-@connectToStores()
 class SearchHeader extends React.Component {
   state = {
     isFilterPanelOpen: false
-  }
-
-  static getStores() {
-    return [
-      stores.ContextStore
-    ];
-  }
-
-  static getPropsFromStores() {
-    let location = stores.ContextStore.getState().get('location');
-    let path = location.pathname + location.search;    
-    let productSearch = stores.SearchStore.getState().getIn([path]);
-    let results = productSearch ? productSearch.first().getIn(['results']) : undefined;
-    let qty = results? results.length : 0;
-
-    return {
-      location,
-      qty
-    };
   }
 
   handleGridTap = () => {
@@ -54,13 +34,16 @@ class SearchHeader extends React.Component {
   }
 
   render() {
-    const qty = this.props.qty;
-    const resultMsg = qty === 1 ?
-      `${qty} resultado para` : `${qty} produtos encontrados`;
+
+    const productQuantity = this.props.productQuantity;
+    const resultMsg = productQuantity === 1 ?
+      `${productQuantity} resultado para` : `${productQuantity} produtos encontrados`;
     const icon = {
       svg: this.props.grid ? gridIcon : listIcon,
       img: this.props.grid ? gridImg : listImg
     };
+
+    let zeroProducts = (productQuantity === 0) ? true : false;
 
     return (
       <nav className="SearchHeader">
@@ -73,35 +56,40 @@ class SearchHeader extends React.Component {
               { resultMsg }
             </span>
           </div>
-          <div className="SearchHeader__buttons">
-            <div className="SearchHeader__filter-button hidden-md hidden-lg">
-              <Placeholder
-                id="filter-button"
-                openFilterPanel={this.toggleFilterPanel(true)}
-              />
+          {
+            zeroProducts ? null :
+            <div>
+              <div className="SearchHeader__buttons">
+                <div className="SearchHeader__filter-button hidden-md hidden-lg">
+                  <Placeholder
+                    id="filter-button"
+                    openFilterPanel={this.toggleFilterPanel(true)}
+                  />
+                </div>
+                <div className="SearchHeader__grid-button" onClick={this.handleGridTap}>
+                  <SVGIcon
+                    className="SearchHeader__icon"
+                    svg={icon.svg}
+                    fallback={icon.img}
+                    height={20}
+                    cleanupExceptions={['width', 'height']}
+                    fill="#777777"
+                  />
+                </div>
+              </div>
+              <div className="hidden-xs hidden-sm">
+                <OrderSelector location={this.props.location} />
+              </div>
+              <div>
+                <Placeholder
+                  id="filter-panel"
+                  location={this.props.location}
+                  isOpen={this.state.isFilterPanelOpen}
+                  closeFilterPanel={this.toggleFilterPanel(false)}
+                />
+              </div>
             </div>
-            <div className="SearchHeader__grid-button" onClick={this.handleGridTap}>
-              <SVGIcon
-                className="SearchHeader__icon"
-                svg={icon.svg}
-                fallback={icon.img}
-                height={20}
-                cleanupExceptions={['width', 'height']}
-                fill="#777777"
-              />
-            </div>
-          </div>
-          <div className="hidden-xs hidden-sm">
-            <OrderSelector location={this.props.location} />
-          </div>
-          <div>
-            <Placeholder
-              id="filter-panel"
-              location={this.props.location}
-              isOpen={this.state.isFilterPanelOpen}
-              closeFilterPanel={this.toggleFilterPanel(false)}
-            />
-          </div>
+          }
         </div>
       </nav>
     );
