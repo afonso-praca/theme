@@ -48,7 +48,7 @@ class Header extends React.Component {
               <HeaderCart />
             </div>
             <div className="hidden-xs hidden-sm">
-              <Placeholder id="minicart" />
+              <Placeholder id="minicart" isRemoveVisible={true} />
             </div>
           </div>
 
