@@ -7,7 +7,7 @@ const Placeholder = stores.ComponentStore.state.getIn(['Placeholder@vtex.storefr
 
 class HeaderSearchComponent extends React.Component {
   state = {
-    isSearchOpen: false
+    isSearchOpen: document.documentElement.clientWidth > 768
   }
 
   handleSearchClick = () => {
@@ -19,22 +19,18 @@ class HeaderSearchComponent extends React.Component {
       <div className="HeaderSearchComponent">
         <HeaderSearchButton handleSearchClick={this.handleSearchClick} />
         <div className="HeaderSearchComponent__search-bar pull-right hidden-md hidden-lg">
-          {
-            <Placeholder
-              id="search-bar"
-              visible={this.state.isSearchOpen}
-              handleSearchClick={this.handleSearchClick}
-            />
-          }
+          <Placeholder
+            id="search-bar"
+            visible={this.state.isSearchOpen}
+            handleSearchClick={this.handleSearchClick}
+          />
         </div>
         <div className="HeaderSearchComponent__search-bar pull-right hidden-xs hidden-sm">
-          {
-            <Placeholder
-              id="search-bar"
-              visible={this.state.isSearchOpen}
-              handleSearchClick={this.handleSearchClick}
-            />
-          }
+          <Placeholder
+            id="search-bar"
+            visible={this.state.isSearchOpen}
+            handleSearchClick={this.handleSearchClick}
+          />
         </div>
       </div>
     );
