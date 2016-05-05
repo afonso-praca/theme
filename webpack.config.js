@@ -11,8 +11,6 @@ var config = {
     'ProductPage': ['./src/components/ProductPage/index.js'],
     'CategoryPage': ['./src/components/CategoryPage/index.js'],
     'SearchPage': ['./src/components/SearchPage/index.js'],
-    'SearchHeader': ['./src/components/SearchHeader/index.js'],
-    'CategoryHeader': ['./src/components/CategoryHeader/index.js'],
     'CategoryListSidebar': ['./src/components/CategoryListSidebar/index.js'],
     'AboutPage': ['./src/components/AboutPage/index.js'],
     'PoliciesPage': ['./src/components/PoliciesPage/index.js'],

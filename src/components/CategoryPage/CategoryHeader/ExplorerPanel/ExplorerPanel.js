@@ -1,7 +1,7 @@
 import React from 'react';
 import './ExplorerPanel.less';
 import { stores } from 'sdk';
-import CategoryList from '../../CategoryList/CategoryList';
+import CategoryList from 'components/CategoryList/CategoryList';
 import pullArrowIcon from 'assets/icons/pullArrow_icon.svg';
 import pullArrowImg from 'assets/icons/pullArrow_icon.png';
 

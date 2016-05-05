@@ -6,8 +6,7 @@ import listIcon from 'assets/icons/list_icon.svg';
 import listImg from 'assets/icons/list_icon.png';
 import gridIcon from 'assets/icons/grid_icon.svg';
 import gridImg from 'assets/icons/grid_icon.png';
-
-import OrderSelector from '../OrderSelector/OrderSelector';
+import OrderSelector from 'components/OrderSelector/OrderSelector';
 
 const Placeholder = stores.ComponentStore.state.getIn(['Placeholder@vtex.storefront-sdk', 'constructor']);
 const SVGIcon = stores.ComponentStore.getState().getIn(['SVGIcon@pilateslovers.pilateslovers-theme', 'constructor']);
@@ -34,7 +33,6 @@ class SearchHeader extends React.Component {
   }
 
   render() {
-
     const productQuantity = this.props.productQuantity;
     const resultMsg = productQuantity === 1 ?
       `${productQuantity} resultado para` : `${productQuantity} produtos encontrados`;

@@ -1,12 +1,12 @@
 import React from 'react';
-import { stores, connectToStores } from 'sdk';
+import { stores } from 'sdk';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './CategoryHeader.less';
 import './CategoryHeaderCustom.less';
 
 import ExplorerButton from './ExplorerButton/ExplorerButton';
 import ExplorerPanel from './ExplorerPanel/ExplorerPanel';
-import OrderSelector from '../OrderSelector/OrderSelector';
+import OrderSelector from 'components/OrderSelector/OrderSelector';
 
 import listIcon from 'assets/icons/list_icon.svg';
 import listImg from 'assets/icons/list_icon.png';
@@ -16,32 +16,10 @@ import gridImg from 'assets/icons/grid_icon.png';
 const Placeholder = stores.ComponentStore.state.getIn(['Placeholder@vtex.storefront-sdk', 'constructor']);
 const SVGIcon = stores.ComponentStore.state.getIn(['SVGIcon@pilateslovers.pilateslovers-theme', 'constructor']);
 
-@connectToStores()
 class CategoryHeader extends React.Component {
   state = {
     isFilterPanelOpen: false,
     isExplorerPanelOpen: false
-  }
-
-  static getStores() {
-    return [
-      stores.ContextStore,
-      stores.FacetsStore
-    ];
-  }
-
-  static getPropsFromStores(props) {
-    let path = props.location.pathname + props.location.search;
-    let facets = stores.FacetsStore.getState().getIn([path, props.id]);
-    let category = facets ? facets.getIn(['filters', 'category']).first() : undefined;
-
-    return {
-      category
-    };
-  }
-
-  shouldComponentUpdate({ category }) {
-    return category !== undefined;
   }
 
   handleGridTap = () => {
@@ -67,10 +45,6 @@ class CategoryHeader extends React.Component {
   }
 
   render() {
-    if (!this.props.category) {
-      return null;
-    }
-
     let layoutName = this.props.grid ? 'Grid' : 'Lista';
     let explorerButton = null;
     let explorerPanel = null;
