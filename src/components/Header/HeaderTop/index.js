@@ -13,9 +13,6 @@ class HeaderTop extends React.Component {
 
   render() {
 
-    let loginURL;
-    loginURL = '#';
-
     let accountURL;
     accountURL = '#';
 
