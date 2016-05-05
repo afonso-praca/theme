@@ -7,6 +7,7 @@ import HeaderMenuToggle from './HeaderMenuToggle/HeaderMenuToggle';
 import HeaderLogo from './HeaderLogo/HeaderLogo';
 import HeaderSearchComponent from './HeaderSearchComponent/HeaderSearchComponent';
 import './style.less';
+import 'utils/base/custom-theme.less';
 import './HeaderCustom.less';
 
 const Placeholder = stores.ComponentStore.state.getIn(['Placeholder@vtex.storefront-sdk', 'constructor']);
@@ -72,8 +73,8 @@ class Header extends React.Component {
 
         <div className="hidden-sm hidden-md hidden-lg">
           <HeaderLogo isMobile={true} />
-          <hr/>
         </div>
+        <hr className="Header__hr hidden-md hidden-lg"/>
         <div className="Header__nav-desktop hidden-sm">
           <div className="Header__nav-desktop-inner">
             <Placeholder id="nav-menu-desktop" />
