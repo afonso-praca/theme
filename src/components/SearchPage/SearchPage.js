@@ -1,5 +1,6 @@
 import React from 'react';
 import { stores, connectToStores } from 'sdk';
+import SearchHeader from './SearchHeader/SearchHeader';
 import FilterListSidebar from 'components/FilterListSidebar/FilterListSidebar';
 import './SearchPage.less';
 
@@ -18,31 +19,37 @@ class SearchPage extends React.Component {
   static getStores() {
     return [
       stores.ContextStore,
+      stores.FacetsStore
     ];
   }
 
   static getPropsFromStores(props) {
-    let path = props.location.pathname + props.location.search;
-    let productSearch = stores.SearchStore.getState().getIn([path]);
-    let results = productSearch ? productSearch.first().getIn(['results']) : undefined;
-    let productQuantity = results? results.length : 0;
+    const location = stores.ContextStore.getState().get('location');
+    const path = location.pathname + location.search;
+    const facets = stores.FacetsStore.getState().getIn([path, props.id]);
+    const brands = facets ? facets.getIn(['filters', 'brand']) : undefined;
+    const productSearch = stores.SearchStore.getState().getIn([path]);
+    const results = productSearch ? productSearch.first().getIn(['results']) : undefined;
+    const productQuantity = results? results.length : 0;
 
     return {
+      location,
+      brands,
       productQuantity
     };
   }
 
   render() {
-    let zeroProducts = (this.props.productQuantity === 0) ? true : false;
-
-    let sidebarClasses = zeroProducts ?
+    const hasBrands = this.props.brands ?
+      this.props.brands.count() > 0 : undefined;
+    const zeroProducts = (this.props.productQuantity === 0) ? true : false;
+    const sidebarClasses = zeroProducts ?
     'col-xs-12 col-sm-12 col-md-12 col-lg-12 SearchPage__no-products' :
     'col-xs-12 col-sm-12 col-md-9 col-lg-10 SearchPage__product-list';
 
     return (
       <div className="SearchPage">
-        <Placeholder
-          id="search-header"
+        <SearchHeader
           searchTerm={this.props.params.searchTerm}
           grid={this.state.grid}
           location={this.props.location}
@@ -52,12 +59,19 @@ class SearchPage extends React.Component {
         <div className="SearchPage__content container-fluid">
           <div className="row">
           {
-            zeroProducts ? null :
-            <div className="SearchPage__sidebar hidden-xs hidden-sm col-md-3 col-lg-2">
-                <div className="SearchPage__filter-list">
-                  <FilterListSidebar id={this.props.id} location={this.props.location} />
-                </div>
-            </div>
+            zeroProducts ?
+              null :
+              <div className="SearchPage__sidebar hidden-xs hidden-sm col-md-3 col-lg-2">
+                {
+                  hasBrands ?
+                    <div className="SearchPage__filter-list">
+                      <FilterListSidebar
+                        id={this.props.id}
+                        location={this.props.location}
+                      />
+                    </div> : null
+                }
+              </div>
           }
             <div className={sidebarClasses}>
               <Placeholder

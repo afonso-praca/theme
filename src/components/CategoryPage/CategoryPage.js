@@ -1,24 +1,60 @@
 import React from 'react';
-import { stores } from 'sdk';
-import FilterListSidebar from 'components/FilterListSidebar/FilterListSidebar';
 import './CategoryPage.less';
+import { stores, connectToStores } from 'sdk';
+import CategoryHeader from './CategoryHeader/CategoryHeader';
+import FilterListSidebar from 'components/FilterListSidebar/FilterListSidebar';
+import PageNotFound from 'components/PageNotFound/PageNotFound';
 
 const Placeholder = stores.ComponentStore.state.getIn(['Placeholder@vtex.storefront-sdk', 'constructor']);
 
+@connectToStores()
 class CategoryPage extends React.Component {
   state = {
     grid: true
-  };
+  }
+
+  static getStores() {
+    return [
+      stores.ContextStore,
+      stores.FacetsStore
+    ];
+  }
+
+  static getPropsFromStores(props) {
+    const path = props.location.pathname + props.location.search;
+    const facets = stores.FacetsStore.getState().getIn([path, props.id]);
+    const brands = facets ? facets.getIn(['filters', 'brand']) : undefined;
+    const category = facets ? facets.getIn(['filters', 'category']).first() : undefined;
+
+    return {
+      brands,
+      category
+    };
+  }
+
+  shouldComponentUpdate({ category }) {
+    return category !== undefined;
+  }
+
 
   changeLayout = () => {
     this.setState({ grid: !this.state.grid });
-  };
+  }
 
   render() {
+    if (!this.props.category) {
+      return (
+        <PageNotFound message="Nenhuma categoria encontrada" />
+      );
+    }
+
+    const hasBrands = this.props.brands ?
+      this.props.brands.count() > 0 : undefined;
+
     return (
       <div className="CategoryPage">
-        <Placeholder
-          id="category-header"
+        <CategoryHeader
+          category={this.props.category}
           grid={this.state.grid}
           location={this.props.location}
           changeLayout={this.changeLayout}
@@ -31,9 +67,12 @@ class CategoryPage extends React.Component {
                   id="category-list-sidebar"
                 />
               </div>
-              <div className="CategoryPage__filter-list">
-                <FilterListSidebar id={this.props.id} />
-              </div>
+              {
+                hasBrands ?
+                  <div className="CategoryPage__filter-list">
+                    <FilterListSidebar id={this.props.id} />
+                  </div> : null
+              }
             </div>
             <div className="col-xs-12 col-sm-12 col-md-9 col-lg-10 CategoryPage__product-list">
               <Placeholder
