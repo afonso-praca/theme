@@ -70,8 +70,10 @@ class Product extends React.Component {
             <div className="hidden-md hidden-lg">
               <h2 className="Product__title">{name}</h2>
             </div>
-            <div className="col-sm-10 col-sm-push-1">
-              <Placeholder id="product-image" images={defaultSku.images} />
+            <div className="row">
+              <div className="col-sm-10 col-sm-push-1">
+                <Placeholder id="product-image" images={defaultSku.images} />
+              </div>
             </div>
           </div>
           <div className="Product__infos col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -91,7 +93,7 @@ class Product extends React.Component {
                         changeSelectedSku={this.changeSelectedSku}
                         id="sku-selector"
                       /> :
-                      <div>
+                      <div className="Product__pricing-info clearfix">
                         <h3 className="Product__price list-price pull-left">De <Price value={listPrice}/></h3>
                         <h3 className="Product__price pull-left">Por <Price value={price}/></h3>
                         <h3 className="Product__price percentual-discount pull-left">Desconto de { percentualDiscount }%</h3>

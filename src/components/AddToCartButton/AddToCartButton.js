@@ -64,7 +64,7 @@ class AddToCartButton extends React.Component {
       boxShadowColor = this.props.settings.get('boxShadowColor');
     }
 
-    let labelAdded = 'Produto adicionado!';
+    let labelAdded = 'Ir para o carrinho';
 
     if (this.checkItemInCart()) {
       return (
