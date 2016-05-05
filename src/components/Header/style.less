@@ -7,9 +7,9 @@
   width: 100%;
   z-index: @zindex-2;
 
-  hr {
+  &__hr {
     border: 1px solid darken(#F3F3F3, 10%);
-    width: 90%;
+    // width: 90%;
     margin-top: 0px;
     margin-bottom: 10px;
   }
@@ -32,7 +32,10 @@
 
   &__nav-desktop {
     width: 100%;
-    border-bottom: 1px solid #E7E7E7;
+
+    @media (min-width: @screen-md-min) {
+      border-bottom: 1px solid #E7E7E7;      
+    }
 
     .NavigationMenuDesktop {
       border-bottom: 0px;

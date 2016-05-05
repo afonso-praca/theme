@@ -67,13 +67,15 @@ class Product extends React.Component {
       <div className={'Product' + (isAvailable ? '' : ' unavailable')}>
         <div className="row">
           <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <div className="hidden-sm hidden-md hidden-lg">
-              <h2 className="Product__title pl-title-m">{name}</h2>
+            <div className="hidden-md hidden-lg">
+              <h2 className="Product__title">{name}</h2>
             </div>
-            <Placeholder id="product-image" images={defaultSku.images} />
+            <div className="col-sm-10 col-sm-push-1">
+              <Placeholder id="product-image" images={defaultSku.images} />
+            </div>
           </div>
           <div className="Product__infos col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <div className="visible-sm visible-md visible-lg">
+            <div className="visible-md visible-lg">
               <h2 className="Product__title">{name}</h2>
               <h3 className="Product__price list-price">De <Price value={listPrice}/></h3>
               <h3 className="Product__price">Por <Price value={price}/></h3>
