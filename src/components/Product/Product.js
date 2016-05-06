@@ -122,7 +122,7 @@ class Product extends React.Component {
             </div>
             {availabilityBanner}
             <Placeholder
-              skuId={defaultSku.id}
+              skuId={this.state.selectedSku}
               cartValidation={cartValidation}
               className={className}
               id="product-button"
