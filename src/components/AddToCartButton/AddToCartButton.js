@@ -55,7 +55,7 @@ class AddToCartButton extends React.Component {
 
   render() {
     let label = 'Adicionar ao carrinho';
-    let color = '#75CCB1';
+    let color = '#703693';
     let boxShadowColor = '#737373';
 
     if (this.props.settings) {
@@ -83,6 +83,7 @@ class AddToCartButton extends React.Component {
       <button className={`${this.props.className} add-btn AddToCartButton__text`}
               style={{backgroundColor: color, boxShadow: `2px 2px 0px 0px ${boxShadowColor}`}}
               onClick={this.handleClick}
+              disabled={!this.props.skuId}
       >
         <div className="hidden-md hidden-lg">
           <a href="/checkout">
