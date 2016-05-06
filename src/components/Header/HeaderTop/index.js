@@ -6,15 +6,13 @@ import facebookImg from 'assets/icons/facebook_icon.png';
 import instagramIcon from 'assets/icons/instagram_icon.svg';
 import instagramImg from 'assets/icons/instagram_icon.png';
 
+const Link = stores.ComponentStore.getState().getIn(['Link@vtex.storefront-sdk', 'constructor']);
 const Placeholder = stores.ComponentStore.state.getIn(['Placeholder@vtex.storefront-sdk', 'constructor']);
 const SVGIcon = stores.ComponentStore.getState().getIn(['SVGIcon@pilateslovers.pilateslovers-theme', 'constructor']);
 
 class HeaderTop extends React.Component {
 
   render() {
-
-    let accountURL;
-    accountURL = '#';
 
     return (
       <div className="HeaderTop clearfix">
@@ -36,7 +34,7 @@ class HeaderTop extends React.Component {
               <Placeholder id="login" />
             </div>
             <div className="HeaderTop__login pull-right">
-              <span><a className="HeaderTop__login-link" href={accountURL}>Minha Conta</a></span>
+              <span><Link className="HeaderTop__login-link" to={`/my-orders`}>Meus Pedidos</Link></span>
             </div>
           </div>
         </div>
