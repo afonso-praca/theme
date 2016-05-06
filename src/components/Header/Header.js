@@ -53,15 +53,9 @@ class Header extends React.Component {
           </div>
 
           <div className="col-md-4 col-lg-4 pull-right header-search-collumn">
-            <HeaderSearchComponent handleSearchTap={this.handleSearchTap} />
+            <HeaderSearchComponent />
           </div>
 
-          {/*<HeaderSearchButton handleSearchTap={this.handleSearchTap} />*/}
-          {/*<Placeholder
-            id="search-bar"
-            visible={this.state.isSearchOpen}
-            handleSearchTap={this.handleSearchTap}
-          />*/}
           <ReactCSSTransitionGroup
             transitionName="NavigationMenu"
             transitionEnterTimeout={200}

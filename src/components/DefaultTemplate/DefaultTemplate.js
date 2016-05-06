@@ -6,7 +6,7 @@ import { stores, history } from 'sdk';
 
 const Placeholder = stores.ComponentStore.state.getIn(['Placeholder@vtex.storefront-sdk', 'constructor']);
 
-let previousLocation;
+let previousLocation = window.location.pathname;
 const unlisten = history.listen(location => {
   const scrollTo = (element, to, duration) => {
     if (duration <= 0) {
