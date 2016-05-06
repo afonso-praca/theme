@@ -16,6 +16,10 @@
     "vtex.shipping-calculator": "0.x",
     "pilateslovers.product-list": "0.x",
     "pilateslovers.navigation-menu": "0.x",
-    "pilateslovers.shelf": "0.x"
+    "pilateslovers.shelf": "0.x",
+    "vtex.login": "0.x",
+    "vtex.minicart": "0.x",
+    "vtex.my-orders": "0.x",
+    "vtex.nav-menu-desktop": "0.x"
   }
 }
