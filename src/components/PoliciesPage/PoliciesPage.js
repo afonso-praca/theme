@@ -5,7 +5,7 @@ class PoliciesPage extends React.Component {
   render() {
     return (
       <div>
-        <div className="content-box">
+        <div className="container content-box">
           <h1 className="cor-secundaria h1">Política de troca e devolução</h1>
             <p>A loja <strong>Pilates Lovers</strong> efetuará a troca dos produtos adquiridos por você,
               de acordo com o previsto no Código de Defesa do Consumidor. O período para se efetuar
@@ -35,8 +35,7 @@ class PoliciesPage extends React.Component {
           <p>Daniela Soria<br/>
             <strong>Pilates Lovers</strong></p>
 
-          </div>
-        <Footer/>
+        </div>
       </div>
     );
   }

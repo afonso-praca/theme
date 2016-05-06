@@ -5,7 +5,7 @@ class AboutPage extends React.Component {
   render() {
     return (
       <div>
-        <div className="content-box">
+        <div className="container content-box">
           <h1 className="cor-secundaria h1">Quem somos</h1>
             <p>Meu nome é <a href="http://danielasoria.com.br" target="_blank">Daniela Soria</a>.&nbsp;
             Sou instrutora de Pilates há 9 anos. Desde então, me envolvi nesse mundo fascinante do Pilates do qual fazem parte o&nbsp;
