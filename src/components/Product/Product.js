@@ -82,6 +82,13 @@ class Product extends React.Component {
               <h3 className="Product__price list-price">De <Price value={listPrice}/></h3>
               <h3 className="Product__price">Por <Price value={price}/></h3>
               <h3 className="Product__price percentual-discount">Desconto de { percentualDiscount }%</h3>
+              <div className="Product__sku-selector">
+                <Placeholder
+                  skus={skus}
+                  changeSelectedSku={this.changeSelectedSku}
+                  id="sku-selector"
+                />
+              </div>
             </div>
             <div className="visible-xs">
               <div className="row">
