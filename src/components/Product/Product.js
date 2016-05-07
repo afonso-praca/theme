@@ -24,7 +24,9 @@ class Product extends React.Component {
   };
 
   render() {
-    let defaultSku = this.state.selectedSku || this.props.skus[0];
+    let { selectedSku } = this.state;
+    let defaultSku = selectedSku || this.props.skus[0];
+    let skuId = selectedSku ? selectedSku.id : null;
     let name = this.props.name;
     let brand = this.props.brand;
     let listPrice = defaultSku.offers[0].listPrice;
@@ -60,7 +62,7 @@ class Product extends React.Component {
     }
 
     let skus = this.props.skus;
-    let cartValidation = this.state.selectedSku ? true : false;
+    let cartValidation = selectedSku ? true : false;
     let className = 'AddToCartButton';
 
     return (
@@ -122,14 +124,14 @@ class Product extends React.Component {
             </div>
             {availabilityBanner}
             <Placeholder
-              skuId={this.state.selectedSku}
+              skuId={skuId}
               cartValidation={cartValidation}
               className={className}
               id="product-button"
               route="product"
             />
             <Placeholder
-              sku={this.state.selectedSku}
+              sku={selectedSku}
               id="shipping-calculator"
             />
           </div>
