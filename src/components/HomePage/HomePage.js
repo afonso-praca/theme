@@ -13,14 +13,38 @@ class HomePage extends React.Component {
           <div className="HomePage__bannerarea">
             <Placeholder id="banner"/>
           </div>
+          <div className="pl-shelf-section">
+            <h2>
+              <span className="pl-shelf-title">Camisetas</span>
+              <a className="pl-shelf-detail" href="/camisetas/c">Ver todos</a>
+            </h2>
+          </div>
           <div className="HomePage__shelfarea">
             <Placeholder id="shelf-camisetas"/>
+          </div>
+          <div className="pl-shelf-section">
+            <h2>
+              <span className="pl-shelf-title">Sapatilhas de Pilates</span>
+              <a className="pl-shelf-detail" href="/sapatilhas-de-pilates/c">Ver todos</a>
+            </h2>
           </div>
           <div className="HomePage__shelfarea">
             <Placeholder id="shelf-sapatilhas"/>
           </div>
+          <div className="pl-shelf-section">
+            <h2>
+              <span className="pl-shelf-title">Meias de Pilates</span>
+              <a className="pl-shelf-detail" href="/meias-de-pilates/c">Ver todos</a>
+            </h2>
+          </div>
           <div className="HomePage__shelfarea">
             <Placeholder id="shelf-meias"/>
+          </div>
+          <div className="pl-shelf-section">
+            <h2>
+              <span className="pl-shelf-title">Infantil</span>
+              <a className="pl-shelf-detail" href="/infantil/c">Ver todos</a>
+            </h2>
           </div>
           <div className="HomePage__shelfarea">
             <Placeholder id="shelf-infantil"/>
