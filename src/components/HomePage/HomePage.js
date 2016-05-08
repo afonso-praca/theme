@@ -25,9 +25,6 @@ class HomePage extends React.Component {
           <div className="HomePage__shelfarea">
             <Placeholder id="shelf-infantil"/>
           </div>
-          <div className="HomePage__shelfarea">
-            <Placeholder id="shelf-acessorios"/>
-          </div>
         </div>
         <Policies />
       </div>
