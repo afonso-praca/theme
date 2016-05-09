@@ -22,6 +22,7 @@ class HomePage extends React.Component {
           <div className="HomePage__shelfarea">
             <Placeholder id="shelf-camisetas"/>
           </div>
+          <hr className="pl-shelf-separator"/>
           <div className="pl-shelf-section">
             <h2>
               <span className="pl-shelf-title">Sapatilhas de Pilates</span>
@@ -31,6 +32,7 @@ class HomePage extends React.Component {
           <div className="HomePage__shelfarea">
             <Placeholder id="shelf-sapatilhas"/>
           </div>
+          <hr className="pl-shelf-separator"/>
           <div className="pl-shelf-section">
             <h2>
               <span className="pl-shelf-title">Meias de Pilates</span>
@@ -40,6 +42,7 @@ class HomePage extends React.Component {
           <div className="HomePage__shelfarea">
             <Placeholder id="shelf-meias"/>
           </div>
+          <hr className="pl-shelf-separator"/>
           <div className="pl-shelf-section">
             <h2>
               <span className="pl-shelf-title">Infantil</span>
