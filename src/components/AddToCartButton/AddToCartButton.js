@@ -72,27 +72,30 @@ class AddToCartButton extends React.Component {
                 style={{backgroundColor: color, boxShadow: `2px 2px 0px 0px ${boxShadowColor}`}}
                 onClick={this.handleClick}
         >
+        <div className="AddToCartButton__inner">
           <a href="/checkout">
             {labelAdded}
           </a>
+        </div>
         </button>
       )
     }
 
     return (
       <button className={`${this.props.className} add-btn AddToCartButton__text`}
-              style={{backgroundColor: color, boxShadow: `2px 2px 0px 0px ${boxShadowColor}`, padding: `12.5px 0`}}
-
+              style={{backgroundColor: color, boxShadow: `2px 2px 0px 0px ${boxShadowColor}`}}
               onClick={this.handleClick}
               disabled={!this.props.skuId}
       >
-        <div className="hidden-md hidden-lg">
-          <a href="/checkout">
+        <div className="AddToCartButton__inner">
+          <div className="hidden-md hidden-lg">
+            <a href="/checkout">
             {label}
-          </a>
-        </div>
-        <div className="hidden-xs hidden-sm">
+            </a>
+          </div>
+          <div className="hidden-xs hidden-sm">
           {label}
+          </div>
         </div>
       </button>
     );

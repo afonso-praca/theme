@@ -10,7 +10,6 @@
   border-radius: 0;
   display: block;
   outline: none;
-  padding: 12.5px;
   width: 100%;
 
   @media (min-width: @screen-md-min) {
@@ -21,14 +20,6 @@
     }
   }
 
-  a, &__text {
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-    font-family: @display-font;
-    font-weight: 500;
-  }
-
   &:active {
     box-shadow: none !important;
     margin-top: 2px;
@@ -36,6 +27,19 @@
 
   &:disabled {
     background: #A8AFAC !important;
+    box-shadow: 2px 2px 0px 0px darken(#A8AFAC, 15%) !important;
+  }
+
+  &__inner {
+    padding: 12.5px 0;
+  }
+
+  a, &__text {
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-family: @display-font;
+    font-weight: 500;
   }
 }
 

@@ -45,7 +45,10 @@ class AddToCartButtonEditor extends React.Component {
       <div className="AddToCartButtonEditor">
         <div className="AddToCartButtonEditor__wrapper">
           <button className="AddToCartButton" style={{backgroundColor: this.state.color, boxShadow: `2px 2px 0px 0px ${this.state.boxShadowColor}`}}>
-            <a href="#">{this.state.label}</a>
+            <div className="AddToCartButton__inner">
+              <a href="#">{this.state.label}</a>
+            </div>
+
           </button>
           <form className="AddToCartButtonEditor__form">
             <div className="AddToCartButtonEditor__form-wrapper">
