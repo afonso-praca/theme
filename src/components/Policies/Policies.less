@@ -1,9 +1,13 @@
 @import "~utils/base/base";
 
 .Policies {
+  margin: 0;
+  padding-bottom: 20px;
+  background-color: #eee;
 
-  margin-bottom: 60px;
-  margin-left: 10%;
+  .Policies-wraper {
+    .theme-width();
+  }
 
   &__title {
     color: @dark-color;
@@ -39,11 +43,5 @@
     font-weight: 400;
     padding-top: 7px;
     color: @secondary-color;
-  }
-
-  &__icon {
-    margin: 0 auto;
-    margin-top: 2px;
-    width: 50%;
   }
 }
