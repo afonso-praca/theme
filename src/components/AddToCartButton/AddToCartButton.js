@@ -81,7 +81,8 @@ class AddToCartButton extends React.Component {
 
     return (
       <button className={`${this.props.className} add-btn AddToCartButton__text`}
-              style={{backgroundColor: color, boxShadow: `2px 2px 0px 0px ${boxShadowColor}`}}
+              style={{backgroundColor: color, boxShadow: `2px 2px 0px 0px ${boxShadowColor}`, padding: `12.5px 0`}}
+
               onClick={this.handleClick}
               disabled={!this.props.skuId}
       >
