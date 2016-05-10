@@ -21,14 +21,16 @@ class CategoryPage extends React.Component {
   }
 
   static getPropsFromStores(props) {
-    const path = props.location.pathname + props.location.search;
+    const location = stores.ContextStore.getState().get('location');
+    const path = location.pathname + location.search;
     const facets = stores.FacetsStore.getState().getIn([path, props.id]);
     const brands = facets ? facets.getIn(['filters', 'brand']) : undefined;
     const category = facets ? facets.getIn(['filters', 'category']).first() : undefined;
 
     return {
       brands,
-      category
+      category,
+      location
     };
   }
 
