@@ -3,6 +3,9 @@
   "title": "Pilates Lovers theme",
   "version": "0.4.11",
   "vendor": "pilateslovers",
+  "categories": [
+    "themes"
+  ],
   "dependencies": {
     "vtex.storefront-sdk": "0.x",
     "vtex.storefront": "0",
