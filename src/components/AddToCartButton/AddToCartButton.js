@@ -68,15 +68,12 @@ class AddToCartButton extends React.Component {
 
     if (this.checkItemInCart()) {
       return (
-        <button className={`${this.props.className} add-btn`}
-                style={{backgroundColor: color, boxShadow: `2px 2px 0px 0px ${boxShadowColor}`}}
-                onClick={this.handleClick}
+        <button
+          className={`${this.props.className} AddToCartButton__inner add-btn`}
+          style={{backgroundColor: color, boxShadow: `2px 2px 0px 0px ${boxShadowColor}`}}
+          onClick={() => location.replace('/checkout')}
         >
-        <div className="AddToCartButton__inner">
-          <a href="/checkout">
-            {labelAdded}
-          </a>
-        </div>
+          <span className="AddToCartButton__inner AddToCartButton__text">{labelAdded}</span>
         </button>
       )
     }
