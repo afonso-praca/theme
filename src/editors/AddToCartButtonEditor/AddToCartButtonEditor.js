@@ -44,24 +44,39 @@ class AddToCartButtonEditor extends React.Component {
     return (
       <div className="AddToCartButtonEditor">
         <div className="AddToCartButtonEditor__wrapper">
-          <button className="AddToCartButton" style={{backgroundColor: this.state.color, boxShadow: `2px 2px 0px 0px ${this.state.boxShadowColor}`}}>
+          <button
+            className="AddToCartButton"
+            style={{
+              backgroundColor: this.state.color,
+              boxShadow: `2px 2px 0px 0px ${this.state.boxShadowColor}`
+            }}
+          >
             <div className="AddToCartButton__inner">
-              <a href="#">{this.state.label}</a>
+              <a href="#">{ this.state.label }</a>
             </div>
-
           </button>
           <form className="AddToCartButtonEditor__form">
             <div className="AddToCartButtonEditor__form-wrapper">
               <div>
                 <label htmlFor="label">Texto</label>
-                <input id="label" className="form-control" type="text" name="label"
-                       value={this.state.label} onChange={this.changeValue.bind(this)} placeholder="Adicionar ao carrinho"/>
+                <input
+                  id="label"
+                  className="form-control"
+                  type="text"
+                  name="label"
+                  value={this.state.label}
+                  onChange={this.changeValue.bind(this)}
+                  placeholder="Adicionar ao carrinho"
+                />
               </div>
               <div>
                 <label htmlFor="label">Cor</label>
                 <div className="row">
                   <div className="AddToCartButtonEditor__color-picker col-xs-12">
-                    <ColorPicker color={this.state.color} onChange={this.handleColorChange.bind(this)}/>
+                    <ColorPicker
+                      color={this.state.color}
+                      onChange={this.handleColorChange.bind(this)}
+                    />
                   </div>
                 </div>
               </div>
@@ -69,7 +84,11 @@ class AddToCartButtonEditor extends React.Component {
           </form>
         </div>
 
-        <ActionBar title={this.props.title} onSave={this.handleSave.bind(this)}/>
+        <ActionBar
+          id={this.props.componentProps.id}
+          title={this.props.title}
+          onSave={this.handleSave.bind(this)}
+        />
       </div>
     );
   }
