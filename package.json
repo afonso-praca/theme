@@ -6,11 +6,10 @@
   "dependencies": {
     "colr": "^1.2.2",
     "lodash-compat": "^3.10.1",
-    "react": "^0.14.6",
-    "react-colorpicker": "^0.3.14",
-    "react-dom": "^0.14.6",
-    "react-router": "^2.0.1",
-    "react-select": "^1.0.0-beta8",
+    "react": "^15.0.2",
+    "react-color": "^2.1.0",
+    "react-dom": "^15.0.2",
+    "react-select": "^1.0.0-beta13",
     "vtex-css-utils": "^2.0.2"
   },
   "devDependencies": {
@@ -32,7 +31,6 @@
     "loader-utils": "^0.2.6",
     "minimist": "^1.1.1",
     "raw-loader": "^0.5.1",
-    "react": "^0.14.0",
     "react-proxy-loader": "^0.3.4",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.0",
