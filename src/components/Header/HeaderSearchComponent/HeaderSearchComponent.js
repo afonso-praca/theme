@@ -4,10 +4,32 @@ import HeaderSearchButton from './HeaderSearchButton/HeaderSearchButton.js';
 import './HeaderSearchComponent.less';
 
 const Placeholder = stores.ComponentStore.state.getIn(['Placeholder@vtex.storefront-sdk', 'constructor']);
+const TABLET_WIDTH = 991;
 
 class HeaderSearchComponent extends React.Component {
   state = {
-    isSearchOpen: document.documentElement.clientWidth > 768
+    isSearchOpen: document.documentElement.clientWidth > TABLET_WIDTH
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  handleResize = () => {
+    let isMobile = document.documentElement.clientWidth < TABLET_WIDTH;
+    if (isMobile && this.state.isSearchOpen) {
+      this.setState({
+        isSearchOpen: false
+      });
+    } else if (!isMobile && !this.state.isSearchOpen) {
+      this.setState({
+        isSearchOpen: true
+      });
+    }
   }
 
   handleSearchClick = () => {
