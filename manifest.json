@@ -23,6 +23,7 @@
     "vtex.login": "0.x",
     "vtex.minicart": "0.x",
     "vtex.my-orders": "0.x",
-    "vtex.nav-menu-desktop": "0.x"
+    "vtex.nav-menu-desktop": "0.x",
+    "vtex.vtex-day-2016-prize": "0.x"
   }
 }
