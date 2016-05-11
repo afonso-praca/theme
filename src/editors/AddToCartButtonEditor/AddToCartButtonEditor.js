@@ -1,8 +1,8 @@
 import React from 'react';
 import './AddToCartButtonEditor.less';
 import '../../components/AddToCartButton/AddToCartButton.less';
-import ColorPicker from 'react-colorpicker'; // eslint-disable-line
 import colr from 'colr';
+import ColorPicker from 'react-color/lib/components/sketched/Sketch';
 
 class AddToCartButtonEditor extends React.Component {
   constructor(props) {
@@ -26,8 +26,8 @@ class AddToCartButtonEditor extends React.Component {
   }
 
   handleColorChange = (color) => {
-    let colorHex = color.toHex();
-    let boxShadowColorHex = color.darken(8).toHex();
+    let colorHex = color.hex;
+    let boxShadowColorHex = colr.fromHex(colorHex).darken(8).toHex();
     this.setState({
       color: colorHex,
       boxShadowColor: boxShadowColorHex
