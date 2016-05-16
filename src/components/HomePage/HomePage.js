@@ -16,15 +16,12 @@ class HomePage extends React.Component {
           <div className="HomePage__shelfarea">
             <Placeholder id="shelf-camisetas"/>
           </div>
-          <hr className="pl-shelf-separator"/>
           <div className="HomePage__shelfarea">
             <Placeholder id="shelf-sapatilhas"/>
           </div>
-          <hr className="pl-shelf-separator"/>
           <div className="HomePage__shelfarea">
             <Placeholder id="shelf-meias"/>
           </div>
-          <hr className="pl-shelf-separator"/>
           <div className="HomePage__shelfarea">
             <Placeholder id="shelf-infantil"/>
           </div>
