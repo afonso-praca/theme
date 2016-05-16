@@ -88,6 +88,9 @@ class DefaultTemplate extends React.Component {
           { loading }
         </ReactCSSTransitionGroup>
         <Placeholder
+          id="gtm"
+        />
+        <Placeholder
           id="metrics"
         />
         <Placeholder

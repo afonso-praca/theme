@@ -19,7 +19,8 @@ var config = {
     'editors/index': ['./src/editors/index.js'],
     'DefaultTemplate': ['./src/components/DefaultTemplate/index.js'],
     'SVGIcon': ['./src/utils/SVGIcon/index.js'],
-    'AddToCartButton': ['./src/components/AddToCartButton/index.js']
+    'AddToCartButton': ['./src/components/AddToCartButton/index.js'],
+    'TagManager': ['./src/components/TagManager/index.js']
   },
   module: {
     preLoaders: [
