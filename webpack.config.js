@@ -14,6 +14,7 @@ var config = {
     'CategoryListSidebar': ['./src/components/CategoryListSidebar/index.js'],
     'AboutPage': ['./src/components/AboutPage/index.js'],
     'PoliciesPage': ['./src/components/PoliciesPage/index.js'],
+    'NotfoundPage': ['./src/components/NotfoundPage/index.js'],
     'Header': ['./src/components/Header/index.js'],
     'Footer': ['./src/components/Footer/index.js'],
     'editors/index': ['./src/editors/index.js'],
