@@ -85,14 +85,9 @@ class AddToCartButton extends React.Component {
               disabled={!this.props.skuId}
       >
         <div className="AddToCartButton__inner">
-          <div className="hidden-md hidden-lg">
-            <a href="/checkout">
-            {label}
-            </a>
-          </div>
-          <div className="hidden-xs hidden-sm">
+          <a href="/checkout">
           {label}
-          </div>
+          </a>
         </div>
       </button>
     );

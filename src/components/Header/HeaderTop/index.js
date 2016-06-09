@@ -33,8 +33,8 @@ class HeaderTop extends React.Component {
             <div className="HeaderTop__login pull-right">
               <Placeholder id="login" />
             </div>
-            <div className="HeaderTop__login pull-right">
-              <span><Link className="HeaderTop__login-link" to={`/my-orders`}>Meus Pedidos</Link></span>
+            <div className="HeaderTop__my-orders pull-right">
+              <span><Link className="HeaderTop__my-orders-link" to={`/my-orders`}>Meus Pedidos</Link></span>
             </div>
           </div>
         </div>
